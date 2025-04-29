@@ -1,0 +1,15 @@
+server:
+  port: 8080
+
+balancer:
+  algorithm: round_robin
+  backends:
+    - url: http://backend1:8081
+    - url: http://backend2:8082
+    - url: http://backend3:8083
+
+rate_limiter:
+  enabled: true
+  default_limit:
+    capacity: 100
+    rate_per_sec: 10
